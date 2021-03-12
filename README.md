@@ -1,36 +1,36 @@
 # ANGULAR PROJEKT
 
-## Repo létrehozása README.MD-vel
+### Repo létrehozása README.MD-vel
 Állítsd be, hogy létrejöjjön a README.MD! Ez azért kell, hogy klónozható legyen a repó.
 
-## VSCode indítása, gyűjtő mappa megnyitása
+### VSCode indítása, gyűjtő mappa megnyitása
 Nyiss meg a VSCode-ban egy olyan mappát/könyvtárat, ahová majd klónozni tudod az imánt létrehozott git repót!
 
-## Repo klónozása
+### Repo klónozása
 ```
 git clone repo-url
 ```
 
-## Belépés a mappába és beállítás rootnak
+### Belépés a mappába és beállítás rootnak
 ```
 cd projectname
 code . -r
 ```
 
-## README.MD törlése
+### README.MD törlése
 Azért kell törölni a README.MD-t, mert a projekt root-jába szeretnénk létrehozni az angular projektünket, ekkor viszont létrejön egy új README.MD és ha az még létezne, hibát dobna.
 
-## Angular telepítése - ha még nem volt
+### Angular telepítése - ha még nem volt
 ```
 npm i @angular/cli -g
 ```
 
-## Json-server telepítése - ha még nem volt
+### Json-server telepítése - ha még nem volt
 ```
 npm i json-server
 ```
 
-## Új Angular projekt létrehozása - több perc lehet
+### Új Angular projekt létrehozása - több perc lehet
 ```
 ng new --name="project-test" --directory . --style scss --routing true --strict
 ```
@@ -41,12 +41,12 @@ A kapcsolók, paraméterek jelentése sorban:
 --routing true - így kapcsoljuk be a rtoutingot
 --strict - így kapcsoljuk be a strict módot
 
-## Bootstrap, Font-Awesome és jQuery telepítése
+### Bootstrap, Font-Awesome és jQuery telepítése
 ```
 npm i bootstrap font-awesome jquery
 ```
 
-## Bootstrap, Font-Awesome és jQuery bekötése a projektbe
+### Bootstrap, Font-Awesome és jQuery bekötése a projektbe
 érintett fájl: angular.json
 ```
 "styles": [
@@ -60,13 +60,13 @@ npm i bootstrap font-awesome jquery
 ]
 ```
 
-## Projekt indításánál megnyissa azt a böngészőben
+### Projekt indításánál megnyissa azt a böngészőben
 érintett fájl: package.json
 ```
 "start": "ng serve -o",
 ```
 
-## Első teszt futtatás
+### Első teszt futtatás
 ```
 npm start
 ```
@@ -74,8 +74,9 @@ Itt megkérdezi, hogy hozzájárulsz-e adatok kültéséhez. Választhatjuk a "N
 Megnyílik az alkalmazás a böngészőben angular alapértelmezett tartalommal.
 Sikeres futtatás után a folyamat Ki is lőhető.
 
-## Főoldal design felépítése
+### Főoldal design felépítése
 érintett fájl: app.component.html
+
 Ehhez érdemes feltenni a Bootstrap 4, Font awesome 4 kiegészítőt Ashok Koyi-tól!
 Az html teljes tartalmát töröljük, majd felépítjük a kívánt komponenseket.
 Bootstrap navbar (megfelelő mepüpontokkal)
@@ -83,7 +84,7 @@ Koji kiegészítővel: b4-navbar-default
 container > row > col a tartalomnak, benne Jumbotron a megfelelő tartalommal
 Koji kiegészítővel: b4-jumbotron-default
 
-## Komponensek létrehozása
+### Komponensek létrehozása
 Oldal komponensek - site mappa (p.l: pages/home, site/products)
 Egyéb komponensek - common mappa (pl.: common/product-list)
 ```
@@ -94,16 +95,18 @@ ng g c common/product-list
 ```
 A létrehozott komponensek az app-module.ts-ben is bejegyződnek. Fontos, ha valami okból kifolyólag törölnünk kell egy komponenst, innen is el kell távolítanunk és nem elég a fájlok törlése.
 
-## Főoldal HTML tartalmának kiszervezése komponensekbe (előkészülés a routingra)
+### Főoldal HTML tartalmának kiszervezése komponensekbe (előkészülés a routingra)
 - navbar -> navigation - helyére <app-navigation></app-navigation>
 - jumbotron -> home - helyére <router-outlet></router-outlet>
 
-## Routing a navbar-ban
+### Routing a navbar-ban
 érintett fájl: navigation.component.html
+
 <a> elemben ```href=""``` helyett ```routerLink="/"```
 
-## Routing - aktív link class
+### Routing - aktív link class
 érintett fájl: navigation.component.html, navigation.component.scss
+
 Ahhoz, hogy az aktív link kapjon egy egyedi css class-t fel kell vegyük az alábbi attribútumot a linkekre:
 ```
 routerLinkActive="link-active
@@ -114,15 +117,16 @@ Ebben az állapotban a Home mindig megkapja az active class-t. Ahhoz, hogy ez ne
 [routerLinkActiveOptions]="{exact:true}"
 ```
 
-## Routing 
+### Routing 
 érintett fájl: app-routing.module.ts
+
 Résztvevő komponensek importálása - légyegében minden, ami a pages mappában található
 ```
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 ```
 
-## Routing - routes tömbben útvonalak felvétele
+### Routing - routes tömbben útvonalak felvétele
 érintett fájl: app-routing.module.ts
 ```
 const routes: Routes = [
@@ -141,19 +145,21 @@ const routes: Routes = [
 ];
 ```
 
-## Lista komponens nézetének felépítése - html
+### Lista komponens nézetének felépítése - html
 érintett fájl: product-list.component.html
+
 Kitöröljük a teljes html tartalmat, majd elhelyezünk egy táblázatot
 Koyi kiegészítővel: b4-table-default
 
-## Lista komponens bekötése a lista oldalba - html
+### Lista komponens bekötése a lista oldalba - html
 érintett fájl: products.component.html
+
 Kitöröljük a teljes html tartalmat, majd elhelyezzük a product-list komponens szelektorát.
 ```
 <app-product-list></app-product-list>
 ```
 
-## Osztály létrehozása
+### Osztály létrehozása
 Osztály létrehozása:
 ```
 ng g class model/product
@@ -168,10 +174,10 @@ Osztály felépítése:
   active: boolean = true;
 ```
 
-## Json fájl létrehozása mockaroo-val
+### Json fájl létrehozása mockaroo-val
 https://www.mockaroo.com
 
-## Json fájlt elhelyezése és szerkesztése
+### Json fájlt elhelyezése és szerkesztése
 Az src mappán kívül, azzal egy szinten létrehozunk egy server mappát, majd áthelyezzük a generált és letöltött json fájlunkat. A fájl neve legyen products.json! A tartalmát egészítsük ki az alábbi módon:
 ```
 {
@@ -179,20 +185,21 @@ Az src mappán kívül, azzal egy szinten létrehozunk egy server mappát, majd 
 }
 ```
 
-## HttpClientModule felvétele
+### HttpClientModule felvétele
 érintett fájl: app.module.ts
 ```
 import { HttpClientModule } from '@angular/common/http'; 
 ```
 Az imports résznél is fel kell venni!
 
-## Service létrehozása
+### Service létrehozása
 ```
 ng g service service/product
 ```
 
-## Service - modulok, osztály importálása
+### Service - modulok, osztály importálása
 érintett fájl: service/product.service.ts
+
 Szükségünk lesz a Product osztályra, valamint a HttpClient modulra, továbbá az rxjs-ből a BehaviorSubject-re és a Observable-re.
 ```
 import { Product } from '../model/product';
@@ -200,21 +207,22 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 ```
 
-## Service - constructorba injektálni a HTTPClient-et
+### Service - constructorba injektálni a HTTPClient-et
 érintett fájl: service/product.service.ts
 ```
 constructor(private http: HttpClient) { }
 ```
 
-## Service - apiUrl és lista felvétele
+### Service - apiUrl és lista felvétele
 érintett fájl: service/product.service.ts
 ```
 apiUrl: string = 'http://localhost:3000/products';
 list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 ```
 
-## Service - getAll és remove metódusok
+### Service - getAll és remove metódusok
 érintett fájl: service/product.service.ts
+
 Mivel a feladatban egy lista komponensre számítunk ezért ehhez szükség lesz egy getAll() metódusra.
 A listán soronként elhelyezhetünk egy törlés gombot is, amely működtetéséhez egy remove() metódus is kelleni fog.
 ```
@@ -229,7 +237,7 @@ A listán soronként elhelyezhetünk egy törlés gombot is, amely működtetés
   }
 ```
 
-## Products page component ts importálások
+### Products page component ts importálások
 érintett fájl: pages/products.component.ts
 ```
 import { Product } from '../../model/product';
@@ -237,7 +245,7 @@ import { ProductService } from '../../service/product.service';
 import { Observable } from 'rxjs';
 ```
 
-## Products page component lista felvétele, service injektálás, getAll() meghívása
+### Products page component lista felvétele, service injektálás, getAll() meghívása
 érintett fájl: pages/products.component.ts
 ```
 productList$: Observable<Product[]> = this.productService.productList$;
@@ -249,31 +257,35 @@ ngOnInit(): void {
 }
 ```
 
-## Products page component html
+### Products page component html
 érintett fájl: pages/products.component.html
+
 A Products oldal komponens nézetében át kell adnunk a lista változót a listázó komponensnek.
 A listázó komponensen belül szándékosan más változónevet használunk a listához.
 ```
 <app-product-list [products]="productList$ | async"></app-product-list>
 ```
 
-## Product-list component ts - importálás
+### Product-list component ts - importálás
 érintett fájl: common/product-list.component.ts
+
 Importáljuk a Product osztályt és az Observable modult.
 ```
 import { Product } from 'src/app/model/product';
 import { Observable } from 'rxjs';
 ```
 
-## Product-list component ts - product lista
+### Product-list component ts - product lista
 érintett fájl: common/product-list.component.ts
+
 Létrehozunk egy products nevű változót, amelynek majd a szülő komponens (Products oldal komponens) átadja a termék listát. A típus kényszerítésnél a null-t is felvesszük, mivel aszinkron érkezik az adat és az első pillanatban még nem lesz benne a Product-ok tömbje.
 ```
 @Input() products: Product[] | null = [];
 ```
 
-## Product-list component html - táblázat sorok generálása és adat interpoláció
+### Product-list component html - táblázat sorok generálása és adat interpoláció
 érintett fájl: common/product-list.component.html
+
 ```
 <tr *ngFor="let product of products">
   <td>{{ product.id }}</td>
@@ -285,8 +297,9 @@ Létrehozunk egy products nevű változót, amelynek majd a szülő komponens (P
 </tr>
 ```
 
-## Törlés gomb elhelyezése
+### Törlés gomb elhelyezése
 érintett fájl: common/product-list.component.html
+
 A thead-ben létrehozunk egy új cellát a végén
 ```
 <th>Actions</th>
@@ -300,8 +313,9 @@ A tbody-ben szintén létrehozunk egy új cellát a végén, törlés gombbal.
 </td>
 ```
 
-## Products oldal komponens törlés metódusa - ts
+### Products oldal komponens törlés metódusa - ts
 érintett fájl: pages/products.component.ts
+
 Szükségünk lesz egy törlés metódusta a lista oldal komponensben, amely feliratkozik a service-ünk remove metódusára.
 A táblázaton nem ezt a metódust fogjuk direktben meghívni, mert nem itt van a lista képezve, hanem a gyermet product-list komponensben.
 ```
@@ -315,8 +329,9 @@ deleteItem(product: Product): void {
 ```
 A feliratkozásban meghívjuk a getAll() metódust is, hogy ezzel újra generáljuk a törlést követően a listát, így a táblázatot is.
 
-## Product-list komponens törlés metódusa - ts
+### Product-list komponens törlés metódusa - ts
 érintett fájl: common/product-list.component.ts
+
 Szükségünk lesz a lista komponensben is egy törlés metódusra. Tulajdonképpen ezt fogjuk meghívni a gombra kattintáskor.
 ```
 onDelete(product: Product): void {
@@ -328,15 +343,17 @@ Ehhez emittálnunk kell, azaz tovább kell küldenünk a click eseményt.
 @Output() delete: EventEmitter<Product> = new EventEmitter();
 ```
 
-## Product-list komponens törlés metódusa - html
+### Product-list komponens törlés metódusa - html
 érintett fájl: common/product-list.component.html
+
 A gomb elemünkre event-bindinggal bekötjük a komponens törlés metódusát és átadjuk neki a sorban szereplő product-ot.
 ```
 (click)="onDelete(product)"
 ```
 
-## Products oldal komponens törlés metódusa - html
+### Products oldal komponens törlés metódusa - html
 érintett fájl: pages/products.component.html
+
 A product-list szelektorára event-bindiggal ráaggatjuk a törlés metódusát, átadva neki az emittelt eseményt.
 Ezzel tudjuk felpumpálni az adatokat egy gyermek komponesból a szülő számára.
 ```
