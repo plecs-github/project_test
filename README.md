@@ -1,6 +1,20 @@
 # ANGULAR PROJEKT
 
-### Repo létrehozása README.MD-vel
+Ebben a feladatban egy olyan angular projektet valósítunk meg, amely az alábbi feltételeket hívatott teljesíteni
+- Új, létező git repóhoz kapcsolódik, annak gyökerébe települ.
+- Bootstrapet és FontAwesome-ot használ.
+- Két oldal komponenst és egy navigációs menüt is tartalmaz.
+- Routing segítségével válthatunk az oldalak között.
+- A Home komponensen egy Jumbotron található, benne egy linkkel, amely a lista oldalra vezet routinggal.
+- Lista oldalon jeleníti meg az adatokat.
+- A lista két komponensből, egy oldal és egy listázó komponensből áll.
+- Egyetlen entitással dolgozik (pl.: Product).
+- Az adatok json-serverből érkeznek.
+- A json állományt mockaroo-val generáljuk.
+- A lista oldalról képesek vagyunk törölni elemeket.
+- 
+
+### Git Repository létrehozása README.MD-vel
 Állítsd be, hogy létrejöjjön a README.MD! Ez azért kell, hogy klónozható legyen a repó.
 
 ### VSCode indítása, gyűjtő mappa megnyitása
