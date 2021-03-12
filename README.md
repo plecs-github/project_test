@@ -67,7 +67,9 @@ npm i bootstrap font-awesome jquery
 ```
 
 ## Első teszt futtatás
+```
 npm start
+```
 Itt megkérdezi, hogy hozzájárulsz-e adatok kültéséhez. Választhatjuk a "No"-t is.
 Megnyílik az alkalmazás a böngészőben angular alapértelmezett tartalommal.
 Sikeres futtatás után a folyamat Ki is lőhető.
@@ -82,8 +84,8 @@ container > row > col a tartalomnak, benne Jumbotron a megfelelő tartalommal
 Koji kiegészítővel: b4-jumbotron-default
 
 ## Komponensek létrehozása
-- oldal komponensek - site mappa (p.l: pages/home, site/products)
-- egyéb komponensek - common mappa (pl.: common/product-list)
+Oldal komponensek - site mappa (p.l: pages/home, site/products)
+Egyéb komponensek - common mappa (pl.: common/product-list)
 ```
 ng g c pages/home
 ng g c pages/products
@@ -98,7 +100,7 @@ A létrehozott komponensek az app-module.ts-ben is bejegyződnek. Fontos, ha val
 
 ## Routing a navbar-ban
 érintett fájl: navigation.component.html
-<a> elemben href="" helyett routerLink="/"
+<a> elemben ```href=""``` helyett ```routerLink="/"```
 
 ## Routing - aktív link class
 érintett fájl: navigation.component.html, navigation.component.scss
