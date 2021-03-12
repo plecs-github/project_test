@@ -18,4 +18,12 @@ export class ProductsComponent implements OnInit {
     this.productService.getAll();
   }
 
+  deleteItem(product: Product): void {
+    this.productService.remove(product).subscribe(
+      () => {
+        this.productService.getAll();
+      }
+    );
+  }
+
 }
