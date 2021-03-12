@@ -191,7 +191,9 @@ Az imports résznél is fel kell venni!
 ng g service service/product
 ```
 
-## Service - komponensek importálása
+## Service - modulok, osztály importálása
+érintett fájl: service/product.service.ts
+Szükségünk lesz a Product osztályra, valamint a HttpClient modulra, továbbá az rxjs-ből a BehaviorSubject-re és a Observable-re.
 ```
 import { Product } from '../model/product';
 import { HttpClient } from '@angular/common/http';
@@ -205,12 +207,14 @@ constructor(private http: HttpClient) { }
 ```
 
 ## Service - apiUrl és lista felvétele
+érintett fájl: service/product.service.ts
 ```
 apiUrl: string = 'http://localhost:3000/products';
 list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 ```
 
 ## Service - getAll és remove metódusok
+érintett fájl: service/product.service.ts
 Mivel a feladatban egy lista komponensre számítunk ezért ehhez szükség lesz egy getAll() metódusra.
 A listán soronként elhelyezhetünk egy törlés gombot is, amely működtetéséhez egy remove() metódus is kelleni fog.
 ```
@@ -234,6 +238,7 @@ import { Observable } from 'rxjs';
 ```
 
 ## Products page component lista felvétele, service injektálás, getAll() meghívása
+érintett fájl: pages/products.component.ts
 ```
 productList$: Observable<Product[]> = this.productService.productList$;
 
