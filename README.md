@@ -169,6 +169,7 @@ Osztály felépítése:
 ```
 
 ## Json fájl létrehozása mockaroo-val
+https://www.mockaroo.com
 
 ## Json fájlt elhelyezése és szerkesztése
 Az src mappán kívül, azzal egy szinten létrehozunk egy server mappát, majd áthelyezzük a generált és letöltött json fájlunkat. A fájl neve legyen products.json! A tartalmát egészítsük ki az alábbi módon:
